@@ -1,0 +1,127 @@
+[
+    {
+      "questionIndex": 1,
+      "question": "What type of lease agreement is this?",
+      "options": ["Standard Lease", "Month to Month Lease"]
+    },
+    {
+      "questionIndex": 2,
+      "question": "What is the type of housing?",
+      "options": ["A house", "An apartment", "A condominium", "A room", "A townhouse", "A duplex", "A semi-detached house"]
+    },
+    {
+      "questionIndex": 3,
+      "question": "Does the premises include any parking?",
+      "options": ["Yes", "No"]
+    },
+    {
+        "questionIndex": 4,
+        "question": "Does the premises include any storage space?",
+        "options": ["Yes", "No"]
+    },
+    {
+        "questionIndex": 5,
+        "question": "Does the premises include any furnishings?",
+        "options": ["No", "Yes"]
+    },
+    {
+        "questionIndex": 6,
+        "question": "Are there any appliances, fixtures and/or furnishings that are not in good condition or need to be repaired?",
+        "options": ["No", "Yes"]
+    },
+    {
+        "questionIndex": 7,
+        "question": "Are there any appliances, fixtures and/or furnishings that are not in good condition or need to be repaired?",
+        "options": ["No", "Yes"]
+    },
+    {
+        "questionIndex": 8,
+        "question": "What is the address of the property?",
+        "TextInput": true
+        
+    },
+    {
+        "questionIndex": 9,
+        "question": "Landlord's name",
+        "TextInput": true
+
+    },
+    {
+        "questionIndex": 10,
+        "question": "How many tenants are there? (Minors do not count)",
+        "options": [1, 2, "More than 2"]
+    },
+    {
+        "questionIndex": 11,
+        "question": "Tenant's name",
+        "TextInput": true
+    },
+    {
+        "questionIndex": 12,
+        "question": "What is the amount of the monthly rent?",
+        "NumInput" : true
+    },
+    {
+        "questionIndex": 13,
+        "question": "On which day of the month should the monthly rent be paid?",
+        "TextInput": true
+    },
+    {
+        "questionIndex": 14,
+        "question": "What are the initial payments to be made?",
+        "options": ["Security deposit","First rent payment","Last month rent", "Cleaning fee"],
+        "multiple": true
+    },
+    {
+        "questionIndex": 15,
+        "question": "How much is the security deposit?",
+        "NumInput" : true
+    },
+    {
+        "questionIndex": 16,
+        "question": "After termination of the agreement, within how many days must the landlord return the security deposit to the tenant?",
+        "NumInput" : true
+    },
+    {
+        "questionIndex": 17,
+        "question": "What payment methods will be accepted?",
+        "options": ["Cash","Personal check","Money order","Cashier's check","Credit card","UPI","Electronic transfer"],
+        "multiple": true
+    },
+    {
+        "questionIndex": 18,
+        "question": "Will there be a late fee charged if rent is not paid by the due date?",
+        "options": ["Yes","No"]
+    },
+    {
+        "questionIndex": 19,
+        "question": "How many days after the start date must the landlord deliver the Premises before the tenant has a right to cancel the lease?",
+        "NumInput" : true
+    },
+    {
+        "questionIndex": 20,
+        "question": "If the tenant cancels the lease since the landlord has failed to deliver the Premise within the specified time, within how many days does the landlord have to return the tenant’s initial payment?",
+        "NumInput" : true
+    },
+    {
+        "questionIndex": 21,
+        "question": "Is smoking allowed on the premises?",
+        "options": ["Yes", "No"]
+    },
+    {
+        "questionIndex": 22,
+        "question": "Are pets allowed on the premises?",
+        "TextInput": true
+    },
+    {
+        "questionIndex": 23,
+        "question": "Can the tenant assign the agreement or sublease the premises?",
+        "options": ["Yes, without the prior consent of the landlord","Yes, with the prior consent of the landlord", "No, the tenant cannot assign the agreement or sublease the property"]
+    },
+    {
+        "questionIndex": 24,
+        "question": "What date is this agreement being signed?",
+        "date": true
+    }
+  ]
+  
