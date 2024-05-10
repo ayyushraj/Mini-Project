@@ -1,36 +1,32 @@
-import React,{useState} from 'react'
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+export default function Lease() {
+  const [selectedOption, setSelectedOption] = useState('');
+  const [selectedPlace, setSelectedPlace] = useState('');
+  const navigate = useNavigate();
 
-export default function lease() {
-// State to manage the selected option
-const [selectedOption, setSelectedOption] = useState(''); // Set initial state to empty string
-const [selectedPlace, setSelectedPlace] = useState(''); // Set initial state to empty string
-
-const navigate = useNavigate(); 
-
-// Function to handle the change in the selected option
-const handleSelectChange = (event) => {
-  setSelectedOption(event.target.value);
-};
-const handlePlace=(event)=>{
-    setSelectedPlace(event.target.value);
-}
-
-const handleSubmit = () => {
-    // Perform any action needed before redirection, such as validating selectedOptionIndex
-    console.log("Selected doc:", selectedOption);
-
-    // Redirect to a different route and pass selectedOptionIndex as a parameter
-    navigate(`/forms/${selectedOption}/${selectedPlace}`);
+  const handleSelectChange = (event) => {
+    setSelectedOption(event.target.value);
   };
 
-const leaseSubTypes = [
+  const handlePlace = (event) => {
+    setSelectedPlace(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("Selected doc:", selectedOption, selectedPlace);
+    navigate('/Form');
+  };
+
+  const leaseSubTypes = [
     "Standard Lease Agreement",
     "Room Rental Agreement",
     "Commercial Lease Agreement"
-];
-const indiaStates = [
+  ];
+
+  const indiaStates = [
     "Andhra Pradesh",
     "Arunachal Pradesh",
     "Assam",
@@ -67,31 +63,27 @@ const indiaStates = [
     "Lakshadweep",
     "Puducherry"
   ];
-return (
-  <div>
-    <h1>Rental and Lease Agreement Templates</h1>
-    {/* Dropdown menu */}
-    <select value={selectedOption} onChange={handleSelectChange}>
-      {/* Default option */}
-      <option value="">Select document</option>
-      {/* Mapping over the array to create options */}
-      {leaseSubTypes.map((lease,index)=>(
-        <option key={index} value={lease}>{lease}</option>
-        ))}
-      
-    </select>
-    {selectedOption !== '' && (
-        <select value={selectedPlace} onChange={handlePlace}>
-          <option value="">Select a state/territory</option>
-          {/* Mapping over the array to create options */}
-          {indiaStates.map((state, index) => (
-            <option key={index} value={state}>{state}</option>
+
+  return (
+    <div>
+      <h1>Rental and Lease Agreement Templates</h1>
+      <form onSubmit={handleSubmit}>
+        <select value={selectedOption} onChange={handleSelectChange}>
+          <option value="">Select document</option>
+          {leaseSubTypes.map((lease, index) => (
+            <option key={index} value={lease}>{lease}</option>
           ))}
         </select>
-      )}
-
-      <button onClick={handleSubmit}>Submit</button>
-      
-  </div>
-);
+        {selectedOption !== '' && (
+          <select value={selectedPlace} onChange={handlePlace}>
+            <option value="">Select a state/territory</option>
+            {indiaStates.map((state, index) => (
+              <option key={index} value={state}>{state}</option>
+            ))}
+          </select>
+        )}
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
 }
