@@ -1,5 +1,6 @@
 import  { useState, useEffect } from 'react';
 import Question from './Question';
+import {BASE_API} from '../api';
 
 const Form = () => {
     const [questionList, setQuestionList] = useState([]);
@@ -8,7 +9,7 @@ const Form = () => {
 
     const fetchQuestionList = async () => {
         try {
-            const response = await fetch('http://localhost:5000/getQuestions');
+            const response = await fetch(`${BASE_API}/questions/getQuestions`);
             if (!response.ok) {
                 throw new Error('Failed to fetch questions');
             }
