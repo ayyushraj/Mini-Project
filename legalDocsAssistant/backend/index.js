@@ -2,7 +2,9 @@
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
-import getQuestionsRoute from "./routes/getQuestions.js";
+import QuestionsRoute from "./routes/QuestionsRoute.js";
+import AuthRoute from "./routes/AuthRoute.js";
+import ResponseRoute from "./routes/ResponseRoute.js";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -21,7 +23,9 @@ mongoose.connect(mongoUrl)
     console.error("Error connecting to MongoDB:", error.message);
   });
 
-app.use("/questions", getQuestionsRoute);
+app.use("/questions", QuestionsRoute);
+app.use("/auth", AuthRoute);
+app.use("/response", ResponseRoute);
 
 app.listen(5000, () => {
   console.log("Server is running on port 5000");

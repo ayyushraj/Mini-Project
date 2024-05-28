@@ -6,12 +6,11 @@ const questionSchema = new mongoose.Schema({
     required: true
   },
   question: {
-    type: String,
+    type: String, 
     required: true
   },
   options: {
     type: [String],
-    required: true
   }
 });
 
