@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const mongoUrl = `mongodb+srv://pratyushghatole2003:Erjn3Xiq0kUltuk9@cluster0.sqtcm42.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
+const mongoUrl = `mongodb+srv://commonUser:OpmJ5VkbcM9xEQcO@cluster0.sqtcm42.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
 mongoose.connect(mongoUrl)
   .then(() => {
     console.log("Connected to MongoDB");

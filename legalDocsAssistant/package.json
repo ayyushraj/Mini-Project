@@ -15,7 +15,7 @@
     "expres": "^0.0.5",
     "express": "^4.19.2",
     "jspdf": "^2.5.1",
-    "mongoose": "^8.3.1",
+    "mongoose": "^8.3.4",
     "nodemon": "^3.1.0",
     "process": "^0.11.10",
     "react": "^18.2.0",
