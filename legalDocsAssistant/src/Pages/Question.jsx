@@ -1,25 +1,38 @@
 /* eslint-disable react/prop-types */
-import { useState } from 'react';
+const Question = ({ question, options, multiple, numInput, date, onResponseChange, response }) => {
+    const handleOptionChange = (e) => {
+        const { value, checked } = e.target;
 
-const Question = ({ question, options }) => {
-    const [selectedOption, setSelectedOption] = useState(null);
+        if (multiple) {
+            let updatedResponse = response ? response.split(', ') : [];
+            if (checked) {
+                updatedResponse.push(value);
+            } else {
+                updatedResponse = updatedResponse.filter(option => option !== value);
+            }
+            onResponseChange(updatedResponse.join(', '));
+        } else {
+            onResponseChange(value);
+        }
+    };
 
-    const handleOptionChange = (index) => {
-        setSelectedOption(index);
+    const handleInputChange = (e) => {
+        onResponseChange(e.target.value);
     };
 
     const renderOptions = () => {
         if (options && options.length > 0) {
             return (
-                <ul>
+                <ul style={{ listStyleType: 'none' }}>
                     {options.map((option, index) => (
                         <li key={index}>
                             <label>
                                 <input
-                                    type="radio"
-                                    value={index}
-                                    checked={selectedOption === index}
-                                    onChange={() => handleOptionChange(index)}
+                                    type={multiple ? 'checkbox' : 'radio'}
+                                    name={multiple ? `checkboxGroup-${question}` : `radioGroup-${question}`}
+                                    value={option}
+                                    checked={multiple ? response.split(', ').includes(option) : response === option}
+                                    onChange={handleOptionChange}
                                 />
                                 {option}
                             </label>
@@ -27,8 +40,12 @@ const Question = ({ question, options }) => {
                     ))}
                 </ul>
             );
+        } else if (numInput) {
+            return <input type="number" value={response} onChange={handleInputChange} style={{ marginBottom: 2 }} />;
+        } else if (date) {
+            return <input type="date" value={response} onChange={handleInputChange} style={{ marginBottom: 2 }} />;
         } else {
-            return <textarea placeholder="Your answer..." />;
+            return <textarea value={response} onChange={handleInputChange} placeholder="Your answer..." />;
         }
     };
 

@@ -2,14 +2,23 @@
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
-import getQuestionsRoute from "./routes/getQuestions.js";
+import QuestionsRoute from "./routes/QuestionsRoute.js";
+import AuthRoute from "./routes/AuthRoute.js";
+import ResponseRoute from "./routes/ResponseRoute.js";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
+<<<<<<< HEAD
 const mongoUrl = `mongodb+srv://commonUser:OpmJ5VkbcM9xEQcO@cluster0.sqtcm42.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
+=======
+const mongoUrl = process.env.MONGOURL;
+>>>>>>> origin/main
 mongoose.connect(mongoUrl)
   .then(() => {
     console.log("Connected to MongoDB");
@@ -18,7 +27,9 @@ mongoose.connect(mongoUrl)
     console.error("Error connecting to MongoDB:", error.message);
   });
 
-app.use("/getQuestions", getQuestionsRoute);
+app.use("/questions", QuestionsRoute);
+app.use("/auth", AuthRoute);
+app.use("/response", ResponseRoute);
 
 app.listen(5000, () => {
   console.log("Server is running on port 5000");
