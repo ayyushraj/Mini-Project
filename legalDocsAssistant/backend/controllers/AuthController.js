@@ -43,9 +43,9 @@ export const loginRoute = async (req, res) => {
       return res.status(401).json({ message: "Incorrect password" });
     }
 
-    const tokenPayload = {email: user.email, username: user.username };
+    const tokenPayload = {email: user.email, username: user.username};
 
-    const token = jwt.sign(tokenPayload, jwtKey, { expiresIn: "1h" });
+    const token = jwt.sign(tokenPayload, jwtKey, { expiresIn: "5d" });
 
     res.status(200).json({ message: "Login successful", token });
   } catch (err) {
@@ -55,16 +55,35 @@ export const loginRoute = async (req, res) => {
 };
 
 export const getUserDetailsRoute = async (req, res) => {
+  try {
+    const { id } = req.params; // Assuming email is passed as a parameter
+    const user = await User.findOne({ email: id }).select('username email state'); 
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+    res.json({ username: user.username, email: user.email, state: user.state });
+  } catch (error) {
+    console.error('Error fetching user details:', error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+
+
+  export const updateStateRoute = async (req, res) => {
+    const { email, state } = req.body;
+  
     try {
-      const email = req.headers.authorization.split(' ')[1];
-      const user = await User.findOne({ email }).select('profilePicUrl username email usn'); 
+      const user = await User.findOneAndUpdate({ email }, { state }, { new: true });
+  
       if (!user) {
-        return res.status(404).json({ message: 'User not found' });
+        return res.status(404).json({ message: "User not found" });
       }
-      res.json({ profilePicUrl: user.profilePicUrl ,username: user.username, usn: user.usn});
-    } catch (error) {
-      console.error('Error fetching user details:', error);
-      res.status(500).json({ message: 'Server error' });
+  
+      res.status(200).json({ message: "State updated successfully", user });
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ message: "Failed to update state" });
     }
   };
-
+  
