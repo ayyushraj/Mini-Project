@@ -56,7 +56,7 @@ export const loginRoute = async (req, res) => {
 
 export const getUserDetailsRoute = async (req, res) => {
   try {
-    const { id } = req.params; // Assuming email is passed as a parameter
+    const { id } = req.params;
     const user = await User.findOne({ email: id }).select('username email state'); 
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
