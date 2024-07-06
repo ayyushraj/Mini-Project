@@ -14,11 +14,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-<<<<<<< HEAD
-const mongoUrl = `mongodb+srv://commonUser:OpmJ5VkbcM9xEQcO@cluster0.sqtcm42.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
-=======
 const mongoUrl = process.env.MONGOURL;
->>>>>>> origin/main
 mongoose.connect(mongoUrl)
   .then(() => {
     console.log("Connected to MongoDB");
@@ -30,6 +26,7 @@ mongoose.connect(mongoUrl)
 app.use("/questions", QuestionsRoute);
 app.use("/auth", AuthRoute);
 app.use("/response", ResponseRoute);
+
 
 app.listen(5000, () => {
   console.log("Server is running on port 5000");

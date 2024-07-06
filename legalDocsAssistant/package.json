@@ -18,12 +18,8 @@
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
     "jspdf": "^2.5.1",
-<<<<<<< HEAD
-    "mongoose": "^8.3.4",
-=======
     "jwt-decode": "^4.0.0",
     "mongoose": "^8.3.1",
->>>>>>> origin/main
     "nodemon": "^3.1.0",
     "process": "^0.11.10",
     "react": "^18.2.0",

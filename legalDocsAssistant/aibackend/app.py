@@ -68,8 +68,12 @@ def get_conversational_chain():
 def user_input(user_question):
     embeddings = GoogleGenerativeAIEmbeddings(model = "models/embedding-001")
     
+<<<<<<< Updated upstream
     #new_db = FAISS.load_local("faiss_index", embeddings)
     new_db = FAISS.load_local("faiss_index", embeddings,allow_dangerous_deserialization=True)
+=======
+    new_db = FAISS.load_local("faiss_index", embeddings, allow_dangerous_deserialization=True)  
+>>>>>>> Stashed changes
     docs = new_db.similarity_search(user_question)
 
     chain = get_conversational_chain()

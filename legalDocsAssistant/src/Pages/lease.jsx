@@ -23,7 +23,9 @@ export default function Lease() {
   const leaseSubTypes = [
     "Standard Lease Agreement",
     "Room Rental Agreement",
-    "Commercial Lease Agreement"
+    "Commercial Lease Agreement",
+    "Non-Disclosure Agreement",
+    "Last Will"
   ];
 
   const indiaStates = [
