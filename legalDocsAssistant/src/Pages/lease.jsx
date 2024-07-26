@@ -37,6 +37,7 @@ export default function Lease() {
       const response = await axios.post(`${BASE_API}/auth/updateState`, {
         email: email,
         state: selectedPlace,
+        typeOfDoc: selectedOption
       }, {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -44,7 +45,7 @@ export default function Lease() {
       });
 
       console.log(response.data);
-      navigate('/Form');
+      navigate(`/form/${selectedOption}`);
     } catch (error) {
       console.error('Failed to update state:', error);
     }
@@ -52,8 +53,9 @@ export default function Lease() {
 
   const leaseSubTypes = [
     "Standard Lease Agreement",
-    "Room Rental Agreement",
-    "Commercial Lease Agreement"
+    "Power of Attorney",
+    "Non disclosure agreement",
+    "Employment agreement"
   ];
 
   const indiaStates = [

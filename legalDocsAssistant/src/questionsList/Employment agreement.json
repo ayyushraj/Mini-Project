@@ -1,0 +1,95 @@
+[
+    {
+      "questionIndex": 1,
+      "question": "What is the date of this Employment Agreement?",
+      "date": true
+    },
+    {
+      "questionIndex": 2,
+      "question": "Name of the Employer",
+      "TextInput": true
+    },
+    {
+      "questionIndex": 3,
+      "question": "Address of the Employer",
+      "TextInput": true
+    },
+    {
+      "questionIndex": 4,
+      "question": "Name of the Employee",
+      "TextInput": true
+    },
+    {
+      "questionIndex": 5,
+      "question": "Address of the Employee",
+      "TextInput": true
+    },
+    {
+      "questionIndex": 6,
+      "question": "Job Title",
+      "TextInput": true
+    },
+    {
+      "questionIndex": 7,
+      "question": "Salary/Hourly Rate",
+      "options": [
+        "Annual Salary",
+        "Hourly Rate",
+        "Commission-based",
+        "Other"
+      ]
+    },
+    {
+      "questionIndex": 8,
+      "question": "Pay Period",
+      "options": [
+        "Weekly",
+        "Bi-weekly",
+        "Monthly",
+        "Annually",
+        "Other"
+      ]
+    },
+    {
+      "questionIndex": 9,
+      "question": "Benefit 1",
+      "options": [
+        "Health Insurance",
+        "Retirement Plan",
+        "Paid Time Off",
+        "None"
+      ]
+    },
+    {
+      "questionIndex": 10,
+      "question": "Benefit 2",
+      "options": [
+        "Health Insurance",
+        "Retirement Plan",
+        "Paid Time Off",
+        "None"
+      ]
+    },
+    {
+      "questionIndex": 12,
+      "question": "Start Date",
+      "date": true
+    },
+    {
+      "questionIndex": 13,
+      "question": "Notice Period",
+      "options": [
+        "1 week",
+        "2 weeks",
+        "1 month",
+        "3 months",
+        "Other"
+      ]
+    },
+    {
+      "questionIndex": 14,
+      "question": "Which state’s laws govern this Employment Agreement?",
+      "TextInput": true
+    }
+  ]
+  

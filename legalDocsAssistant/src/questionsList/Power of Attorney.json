@@ -1,0 +1,81 @@
+[
+    {
+      "questionIndex": 1,
+      "question": "What is the date of this Power of Attorney?",
+      "date": true
+    },
+    {
+      "questionIndex": 2,
+      "question": "Name of the Principal",
+      "TextInput": true
+    },
+    {
+      "questionIndex": 3,
+      "question": "Address of the Principal",
+      "TextInput": true
+    },
+    {
+      "questionIndex": 4,
+      "question": "Name of the Attorney-in-Fact",
+      "TextInput": true
+    },
+    {
+      "questionIndex": 5,
+      "question": "Address of the Attorney-in-Fact",
+      "TextInput": true
+    },
+    {
+      "questionIndex": 6,
+      "question": "What type of Power of Attorney is this?",
+      "options": [
+        "General Power of Attorney",
+        "Special Power of Attorney",
+        "Durable Power of Attorney",
+        "Springing Power of Attorney",
+        "Other"
+      ]
+    },
+    {
+      "questionIndex": 7,
+      "question": "What powers are granted to the Attorney-in-Fact?",
+      "options": [
+        "Financial Decisions",
+        "Real Estate Transactions",
+        "Legal Matters",
+        "Healthcare Decisions",
+        "Other"
+      ]
+    },
+    {
+      "questionIndex": 8,
+      "question": "Is this Power of Attorney durable?",
+      "options": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "questionIndex": 9,
+      "question": "What is the effective date of this Power of Attorney?",
+      "date": true
+    },
+    {
+      "questionIndex": 10,
+      "question": "Is there a termination date for this Power of Attorney?",
+      "options": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "questionIndex": 11,
+      "question": "If yes, what is the termination date?",
+      "date": true
+    },
+    {
+      "questionIndex": 12,
+      "question": "Which state’s laws govern this Power of Attorney?",
+      "TextInput": true
+    }
+  ]
+  

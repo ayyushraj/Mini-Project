@@ -42,7 +42,7 @@
     {
         "questionIndex": 9,
         "question": "Are pets allowed on the premises?",
-        "TextInput": true
+        "options": ["Yes", "No"]
     },
     {
         "questionIndex": 10,

@@ -63,28 +63,28 @@ const ReportTemplate = () => {
     <div className="container mx-auto p-4 flex justify-center flex-col">
       <button onClick={handlePrint} className="btn btn-primary mb-1">Download PDF</button>
       <div className="page-container border border-dashed border-black p-4 bg-white" ref={componentRef}>
-        <h1 className="text-2xl font-bold text-center mb-2">RESIDENTIAL LEASE AGREEMENT</h1>
+        <h1 className="text-2xl font-bold text-center mb-2">LEASE AGREEMENT</h1>
 
-        <p className="mb-4">This Lease Agreement is made and effective on <u>{responseMap[24] || '[Date]'}</u>, by and between:</p>
+        <p className="mb-4">This Lease Agreement is made and effective on <u>{responseMap[1] || '[Date]'}</u>, by and between:</p>
 
         <div className="mb-4">
           <h2>Landlord</h2>
-          <p><u>{responseMap[9] || '[Landlord\'s Full Name]'}</u>, located at "{responseMap[8]}"</p>
+          <p><u>{responseMap[2] || '[Landlord\'s Full Name]'}</u>, located at "{responseMap[3]}"</p>
         </div>
 
         <div className="mb-4">
           <h2>1. Premises</h2>
-          <p>Landlord hereby leases to Tenant and Tenant leases from Landlord the premises located at "<u>{responseMap[8] || '[Property Address]'}</u>" ("Premises") under the following terms and conditions.</p>
+          <p>Landlord hereby leases to Tenant and Tenant leases from Landlord the premises located at "<u>{responseMap[3] || '[Property Address]'}</u>" ("Premises") under the following terms and conditions.</p>
         </div>
 
         <div className="mb-4">
           <h2>2. Rent</h2>
-          <p>Tenant agrees to pay Landlord as rent for the Premises the sum of Rs.<u>{responseMap[12] || '[Rent Amount]'}</u> per month, due on the "<u>{responseMap[13] || '[Due Date]'}</u>" day of each month. Rent shall be paid to "<u>{responseMap[9] || '[Landlord\'s Name]'}</u>" at "{responseMap[8]}", or at such other place as Landlord may designate in writing.</p>
+          <p>Tenant agrees to pay Landlord as rent for the Premises the sum of Rs.<u>{responseMap[4] || '[Rent Amount]'}</u> per month, due on the day "<u>{responseMap[5] || '[Due Date]'}</u>" of each month. Rent shall be paid to "<u>{responseMap[2] || '[Landlord\'s Name]'}</u>" at "{responseMap[3]}", or at such other place as Landlord may designate in writing.</p>
         </div>
 
         <div className="mb-4">
           <h2>3. Security Deposit</h2>
-          <p>Upon execution of this Lease, Tenant shall deposit with Landlord the sum of Rs.<u>{responseMap[15] || '[Security Deposit Amount]'}</u> as security for the full and faithful performance by Tenant of all terms of this Lease. The security deposit shall be returned to Tenant within "<u>{responseMap[16] || '[Number]'}</u>" days after the termination of this Lease, less any amount deducted for damages to the Premises or unpaid rent.</p>
+          <p>Upon execution of this Lease, Tenant shall deposit with Landlord the sum of Rs.<u>{responseMap[6] || '[Security Deposit Amount]'}</u> as security for the full and faithful performance by Tenant of all terms of this Lease. The security deposit shall be returned to Tenant within "<u>{responseMap[7] || '[Number]'}</u>" days after the termination of this Lease, less any amount deducted for damages to the Premises or unpaid rent.</p>
         </div>
 
         <div className="mb-4">
@@ -109,12 +109,12 @@ const ReportTemplate = () => {
 
         <div className="mb-4">
           <h2>8. Pets</h2>
-          <p>"<u>{responseMap[22] || '[Pets policy]'}</u>"</p>
+          <p>"<u>{responseMap[9] || '[Pets policy]'}</u>"</p>
         </div>
 
         <div className="mb-4">
           <h2>9. Subletting and Assignment</h2>
-          <p>"<u>{responseMap[23] || '[Subletting policy]'}</u>"</p>
+          <p>"<u>{responseMap[10] || '[Subletting policy]'}</u>"</p>
         </div>
 
         <div className="mb-4">
@@ -143,10 +143,10 @@ const ReportTemplate = () => {
         </div>
 
         <p><br />
-          <span className="underline">"{responseMap[9] || '[Landlord\'s Name]'}"</span>, Landlord ___________</p>
+          <span className="underline">"{responseMap[2] || '[Landlord\'s Name]'}"</span>, Landlord ___________</p>
 
         <p><br />
-          <span className="underline">"{responseMap[11] || '[Tenant\'s Name]'}"</span>, Tenant
+          <span className="underline">"{responseMap[8] || '[Tenant\'s Name]'}"</span>, Tenant
           __________</p>
 
         <div className="mb-4">

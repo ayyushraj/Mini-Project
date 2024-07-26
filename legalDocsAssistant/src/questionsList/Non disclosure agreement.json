@@ -1,0 +1,101 @@
+[
+    {
+        "questionIndex": 1,
+        "question": "What is the date of this agreement?",
+        "date": true
+    },
+    {
+        "questionIndex": 2,
+        "question": "Name of the Disclosing Party",
+        "TextInput": true
+    },
+    {
+        "questionIndex": 3,
+        "question": "Address of the Disclosing Party",
+        "TextInput": true
+    },
+    {
+        "questionIndex": 4,
+        "question": "Name of the Receiving Party",
+        "TextInput": true
+    },
+    {
+        "questionIndex": 5,
+        "question": "Address of the Receiving Party",
+        "TextInput": true
+    },
+    {
+        "questionIndex": 6,
+        "question": "What is the purpose of this NDA?",
+        "options": [
+            "Protecting trade secrets",
+            "Confidentiality in business negotiations",
+            "Safeguarding proprietary information",
+            "Preventing the disclosure of sensitive data",
+            "Other"
+        ]
+    },
+    {
+        "questionIndex": 7,
+        "question": "What constitutes 'Confidential Information' under this agreement?",
+        "TextInput": true
+    },
+    {
+        "questionIndex": 8,
+        "question": "What are the obligations of the Receiving Party regarding the Confidential Information?",
+        "TextInput": true
+    },
+    {
+        "questionIndex": 9,
+        "question": "What exclusions are there from the definition of Confidential Information?",
+        "options": [
+            "Information already known to the Receiving Party",
+            "Information publicly available",
+            "Information received from a third party without confidentiality obligations",
+            "Information independently developed by the Receiving Party",
+            "Other"
+        ]
+    },
+    {
+        "questionIndex": 10,
+        "question": "What is the term of this NDA?",
+        "options": [
+            "1 year",
+            "2 years",
+            "3 years",
+            "5 years",
+            "Other"
+        ]
+    },
+    {
+        "questionIndex": 11,
+        "question": "What should the Receiving Party do with the Confidential Information upon termination of the NDA?",
+        "options": [
+            "Return all materials",
+            "Destroy all materials",
+            "Provide written certification of destruction",
+            "Other"
+        ]
+    },
+    {
+        "questionIndex": 12,
+        "question": "Which state’s laws govern this NDA?",
+        "TextInput": true
+    },
+    {
+        "questionIndex": 13,
+        "question": "Is there any license granted to the Receiving Party under this NDA?",
+        "options": [
+            "Yes",
+            "No"
+        ]
+    },
+    {
+        "questionIndex": 14,
+        "question": "Is this NDA the entire agreement between the parties?",
+        "options": [
+            "Yes",
+            "No"
+        ]
+    }
+]
