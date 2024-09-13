@@ -14,10 +14,6 @@ export default function LandingPage() {
     }
   };
 
-  const handleNavigate2 = (url) => {
-    window.location.href = url;
-  };
-
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-6">
       <img className="h-20 w-20" src={logo} alt="Logo" />
@@ -27,7 +23,7 @@ export default function LandingPage() {
       </p>
       <div className="flex space-x-8 mb-16">
         <button
-          onClick={() => handleNavigate2('http://localhost:8501/')}
+          onClick={() => handleNavigate('/summarize')}
           className="flex items-center px-8 py-4 text-3xl font-bold text-white bg-indigo-600 rounded-lg shadow-lg hover:bg-indigo-700"
         >
           <FaRobot className="mr-4" /> Use Chatbot

@@ -1,10 +1,11 @@
 import express from 'express';
-import { loginRoute, signupRoute, getUserDetailsRoute} from '../controllers/AuthController.js';
+import { loginRoute, signupRoute, getUserDetailsRoute, updateStateRoute} from '../controllers/AuthController.js';
 
 const router = express.Router()
 
 router.post('/login', loginRoute)
 router.post('/signup', signupRoute)
-router.get('/getUserDetails', getUserDetailsRoute)
+router.get('/getUserDetails/:id', getUserDetailsRoute)
+router.post('/updateState', updateStateRoute)
 
 export default router

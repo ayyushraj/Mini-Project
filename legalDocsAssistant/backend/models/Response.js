@@ -16,8 +16,9 @@ const responseSchema = new mongoose.Schema({
             type: String,
             required: true
         }
-    }]
+    }],
 });
+
 
 const Response = mongoose.model('Response', responseSchema);
 

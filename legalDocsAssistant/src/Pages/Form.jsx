@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import Question from './Question';
-import { useNavigate } from 'react-router-dom'; 
+import Question from '../components/QuestionComp/Questions';
+import { useNavigate } from 'react-router-dom';
 import { BASE_API } from '../api';
 import {jwtDecode} from 'jwt-decode';
 
@@ -62,9 +62,9 @@ const Form = () => {
         setCurrentQuestionIndex(prevIndex => prevIndex + 1);
 
         if (currentQuestionIndex === questionList.length - 1) {
-            navigate(`/displayResponse/${userData.email}`); 
+            navigate(`/report/${userData.email}`);
         }
-        
+
     };
 
     const handlePrevQuestion = () => {
@@ -87,41 +87,47 @@ const Form = () => {
     }, [currentQuestionIndex, questionList, responses]);
 
     return (
-        <div>
-            {loading && <p>Loading...</p>}
-            {error && <p>Error: {error}</p>}
-            {!loading && !error && (
-                <div>
-                    <h1>Question List</h1>
-                    {questionList.map((question, index) => (
-                        index === currentQuestionIndex && (
-                            <Question
-                                key={question.questionIndex}
-                                question={question.question}
-                                options={question.options}
-                                multiple={question.multiple}
-                                numInput={question.numInput}
-                                date={question.date}
-                                onResponseChange={handleResponseChange}
-                                response={currentResponse}
-                            />
-                        )
-                    ))}
+        <div className="flex justify-center">
+            <div className="w-full max-w-2xl p-4">
+            <h1 className="text-2xl font-bold mb-4 text-center">Question List</h1>
+                {loading && <p>Loading...</p>}
+                {error && <p className="text-red-500">Error: {error}</p>}
+                {!loading && !error && (
                     <div>
-                        {currentQuestionIndex > 0 && (
-                            <button onClick={handlePrevQuestion}>Previous Question</button>
-                        )}
-                        {currentQuestionIndex < questionList.length - 1 && (
-                            <button onClick={handleNextQuestion}>Next Question</button>
-                        )}
-                        {currentQuestionIndex === questionList.length - 1 && (
-                            <button onClick={(handleNextQuestion)}>Submit Responses</button>
-                        )}
+                    
+                        {questionList.map((question, index) => (
+                            index === currentQuestionIndex && (
+                                <div key={question.questionIndex} className="bg-white rounded-lg shadow-md p-6 mb-6">
+                                    <Question
+                                        question={question.question}
+                                        options={question.options}
+                                        multiple={question.multiple}
+                                        numInput={question.numInput}
+                                        date={question.date}
+                                        onResponseChange={handleResponseChange}
+                                        response={currentResponse}
+                                        questionNumber={index + 1}
+                                    />
+                                    <div className="flex justify-between mt-6">
+                                        {currentQuestionIndex > 0 && (
+                                            <button onClick={handlePrevQuestion} className="mr-2 px-4 py-2 bg-gray-200 text-gray-800 rounded-md">Previous Question</button>
+                                        )}
+                                        {currentQuestionIndex < questionList.length - 1 && (
+                                            <button onClick={handleNextQuestion} className="px-4 py-2 bg-blue-500 text-white rounded-md">Next Question</button>
+                                        )}
+                                        {currentQuestionIndex === questionList.length - 1 && (
+                                            <button onClick={handleNextQuestion} className="px-4 py-2 bg-green-500 text-white rounded-md">Submit Responses</button>
+                                        )}
+                                    </div>
+                                </div>
+                            )
+                        ))}
                     </div>
-                </div>
-            )}
+                )}
+            </div>
         </div>
     );
+    
 };
 
 export default Form;
