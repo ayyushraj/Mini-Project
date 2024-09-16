@@ -61,16 +61,25 @@ Before running this project, ensure you have the following installed:
 Here are some screenshots of the HomeAway application:
 
 ### Home Page
-![Home Page](ss/home.png)
+![Home Page](![Screenshot (601)](https://github.com/user-attachments/assets/c8666bd5-82a3-40ba-8d29-e2c7a4fb78d0)
+)
 
 ### Document Form selection
-![Place Page](ss/placepage.png)
+![Select Document type](![Screenshot (602)](https://github.com/user-attachments/assets/d9951e29-2a5e-4064-a164-86a0fbe11126)
+)
 
 ### Standard lease Form
-![Login Page](ss/login.png)
+![lease agreement form](![Screenshot (604)](https://github.com/user-attachments/assets/545c5df8-ed44-49ea-afd6-022347e63f67)
+)
+
+![Questions](https://github.com/user-attachments/assets/a2cc7930-ec4d-4aab-8112-10ebf784eace)
 
 ### Chat bot-processing a pdf document
-![Signup Page](sss/register.png)
+![Final Document](![Screenshot (608)](https://github.com/user-attachments/assets/0a56b02c-715d-48bc-91fb-1d7452982a9a)
+)
 
 ### Chat bot-answering queries
-![Signup Page](sss/register.png)
+![Upload and Process Document for Chat bot](https://github.com/user-attachments/assets/e1dbbcad-5830-4a69-a29c-1b1f2a928c25)
+![Query_Answer](https://github.com/user-attachments/assets/8a0555f4-6f67-4c1e-a1ad-a0be929d39e0)
+
+
