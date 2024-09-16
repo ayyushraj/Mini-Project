@@ -23,7 +23,7 @@ export default function LandingPage() {
       </p>
       <div className="flex space-x-8 mb-16">
         <button
-          onClick={() => handleNavigate('/summarize')}
+        onClick={() => window.location.href = 'http://localhost:8501/'}
           className="flex items-center px-8 py-4 text-3xl font-bold text-white bg-indigo-600 rounded-lg shadow-lg hover:bg-indigo-700"
         >
           <FaRobot className="mr-4" /> Use Chatbot

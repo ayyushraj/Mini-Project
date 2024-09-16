@@ -16,11 +16,18 @@ load_dotenv()
 os.getenv("GOOGLE_API_KEY")
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
+guide_text = """
+Welcome to the AI chatbot! Here's how to use it:
+1. Upload a PDF document.
+2. Click on submit & Process
+3. Ask any question related to the document.
+4. The chatbot will provide answers based on the document content.
+"""
 
 
 
 def get_pdf_text(pdf_docs):
-    text=""
+    text=guide_text
     for pdf in pdf_docs:
         pdf_reader= PdfReader(pdf)
         for page in pdf_reader.pages:
@@ -68,7 +75,8 @@ def get_conversational_chain():
 def user_input(user_question):
     embeddings = GoogleGenerativeAIEmbeddings(model = "models/embedding-001")
     
-    new_db = FAISS.load_local("faiss_index", embeddings)
+    new_db = FAISS.load_local("faiss_index", embeddings, allow_dangerous_deserialization=True)
+
     docs = new_db.similarity_search(user_question)
 
     chain = get_conversational_chain()

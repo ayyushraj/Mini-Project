@@ -12,8 +12,15 @@ function Navbar() {
   const isUserLoggedIn = () => {
     const token = localStorage.getItem('token');
     if (!token) return false;
-    const decodedToken = jwtDecode(token);
-    return decodedToken.exp * 1000 > Date.now();
+
+    try {
+      const decodedToken = jwtDecode(token);
+      // Check if the token has expired
+      return decodedToken.exp * 1000 > Date.now();
+    } catch (error) {
+      console.error("Invalid token", error);
+      return false;
+    }
   };
 
   const handleLogout = () => {
